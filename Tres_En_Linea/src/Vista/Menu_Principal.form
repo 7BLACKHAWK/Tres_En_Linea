@@ -161,6 +161,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Usuario vs PC"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jr_UnJugadorActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JRadioButton" name="jr_DosJugadores">
       <Properties>
@@ -175,6 +178,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Usuario vs Usuario"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jr_DosJugadoresActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="jl_Jugador1">
       <Properties>

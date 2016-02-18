@@ -26,8 +26,14 @@ public class Menu_Principal extends javax.swing.JFrame {
         this.getContentPane().setBackground(Color.BLACK);
         g_tipoJuego.add(jr_UnJugador);
         g_tipoJuego.add(jr_DosJugadores);
+        inicio();
         
     }
+    public final void inicio(){
+        jt_Jugador1.setEnabled(false);
+        jt_Jugador2.setEnabled(false);
+    }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -64,11 +70,21 @@ public class Menu_Principal extends javax.swing.JFrame {
         jr_UnJugador.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jr_UnJugador.setForeground(new java.awt.Color(255, 255, 255));
         jr_UnJugador.setText("Usuario vs PC");
+        jr_UnJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jr_UnJugadorActionPerformed(evt);
+            }
+        });
 
         jr_DosJugadores.setBackground(new java.awt.Color(0, 0, 0));
         jr_DosJugadores.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jr_DosJugadores.setForeground(new java.awt.Color(255, 255, 255));
         jr_DosJugadores.setText("Usuario vs Usuario");
+        jr_DosJugadores.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jr_DosJugadoresActionPerformed(evt);
+            }
+        });
 
         jl_Jugador1.setBackground(new java.awt.Color(0, 0, 0));
         jl_Jugador1.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
@@ -187,12 +203,10 @@ public class Menu_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jt_Jugador2ActionPerformed
 
     private void bt_InciarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_InciarJuegoActionPerformed
-        
         if(jr_UnJugador.isSelected()==true){
             Juego JN = new Juego();
             JN.setVisible(true);
             dispose();
-            jt_Jugador2.setEnabled(false);
             Juego.jt_J1.setText(jt_Jugador1.getText());
             jt_Jugador2.setText("PC");
             Juego.jt_J2.setText(jt_Jugador2.getText());
@@ -211,6 +225,17 @@ public class Menu_Principal extends javax.swing.JFrame {
         jt_Jugador2.setText("");
         }
     }//GEN-LAST:event_bt_InciarJuegoActionPerformed
+
+    private void jr_UnJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jr_UnJugadorActionPerformed
+        jt_Jugador1.setEnabled(true);
+        jt_Jugador2.setEnabled(false);
+        jt_Jugador2.setText("");
+    }//GEN-LAST:event_jr_UnJugadorActionPerformed
+
+    private void jr_DosJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jr_DosJugadoresActionPerformed
+        jt_Jugador1.setEnabled(true);
+        jt_Jugador2.setEnabled(true);
+    }//GEN-LAST:event_jr_DosJugadoresActionPerformed
 
     /**
      * @param args the command line arguments
