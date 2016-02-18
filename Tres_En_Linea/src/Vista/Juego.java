@@ -24,6 +24,9 @@ public class Juego extends javax.swing.JFrame {
         setTitle("Tres en Raya");
         this.getContentPane().setBackground(Color.BLACK);
     }
+    public void puntajeInicial(){
+    
+    }
 
     /**
      * This method is called from within the constructor to initialize the form.

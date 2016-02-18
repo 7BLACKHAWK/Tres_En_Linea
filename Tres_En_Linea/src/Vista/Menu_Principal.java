@@ -32,7 +32,8 @@ public class Menu_Principal extends javax.swing.JFrame {
     public final void inicio(){
         jt_Jugador1.setEnabled(false);
         jt_Jugador2.setEnabled(false);
-    }
+    }   
+    
     
 
     /**
@@ -203,12 +204,16 @@ public class Menu_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jt_Jugador2ActionPerformed
 
     private void bt_InciarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_InciarJuegoActionPerformed
+        if(("".equals(jt_Jugador1.getText()) && "".equals(jt_Jugador2.getText())) || ("".equals(jt_Jugador1.getText()) || "".equals(jt_Jugador2.getText())) || jt_Jugador1.getText().equals(jt_Jugador2.getText())){
+        JOptionPane.showMessageDialog(null, "Error: \n"
+                + " Debe completar todos los datos"
+                + " \n Los usuarios no pueden ser el mismo");
+        }else{
         if(jr_UnJugador.isSelected()==true){
             Juego JN = new Juego();
             JN.setVisible(true);
             dispose();
             Juego.jt_J1.setText(jt_Jugador1.getText());
-            jt_Jugador2.setText("PC");
             Juego.jt_J2.setText(jt_Jugador2.getText());
         }
         if(jr_DosJugadores.isSelected()==true){
@@ -217,22 +222,24 @@ public class Menu_Principal extends javax.swing.JFrame {
             dispose();
             Juego.jt_J1.setText(jt_Jugador1.getText());
             Juego.jt_J2.setText(jt_Jugador2.getText());
+
         }
-        
         if(jr_UnJugador.isSelected()==false && jr_DosJugadores.isSelected()==false){
-        JOptionPane.showMessageDialog(null, "Debe seleccionar un modo de juego");
-        jt_Jugador1.setText("");
-        jt_Jugador2.setText("");
+            JOptionPane.showMessageDialog(null, "Debe seleccionar un modo de juego");
+            jt_Jugador1.setText("");
+            jt_Jugador2.setText("");
+        }
         }
     }//GEN-LAST:event_bt_InciarJuegoActionPerformed
 
     private void jr_UnJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jr_UnJugadorActionPerformed
         jt_Jugador1.setEnabled(true);
         jt_Jugador2.setEnabled(false);
-        jt_Jugador2.setText("");
+        jt_Jugador2.setText("PC");
     }//GEN-LAST:event_jr_UnJugadorActionPerformed
 
     private void jr_DosJugadoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jr_DosJugadoresActionPerformed
+        jt_Jugador2.setText("");
         jt_Jugador1.setEnabled(true);
         jt_Jugador2.setEnabled(true);
     }//GEN-LAST:event_jr_DosJugadoresActionPerformed
