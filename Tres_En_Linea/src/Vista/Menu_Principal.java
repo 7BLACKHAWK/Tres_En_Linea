@@ -23,7 +23,7 @@ public class Menu_Principal extends javax.swing.JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Tres en Raya");
-        this.getContentPane().setBackground(Color.BLACK);
+        this.getContentPane().setBackground(Color.BLUE);
         g_tipoJuego.add(jr_UnJugador);
         g_tipoJuego.add(jr_DosJugadores);
         
