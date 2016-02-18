@@ -1,3 +1,5 @@
+package Tres_En_Linea;
+
 import Vista.Menu_Principal;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;

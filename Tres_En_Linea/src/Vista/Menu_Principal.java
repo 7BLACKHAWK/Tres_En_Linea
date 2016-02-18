@@ -192,6 +192,7 @@ public class Menu_Principal extends javax.swing.JFrame {
             Juego JN = new Juego();
             JN.setVisible(true);
             dispose();
+            jt_Jugador2.setEditable(false);
             Juego.jt_J1.setText(jt_Jugador1.getText());
             jt_Jugador2.setText("PC");
             Juego.jt_J2.setText(jt_Jugador2.getText());
