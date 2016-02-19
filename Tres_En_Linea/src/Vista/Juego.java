@@ -418,48 +418,48 @@ public class Juego extends javax.swing.JFrame {
 
     
     int n0(){
-       byte numero = 0;
-       JuegoLogico.numeroClikeado(numero);
+       JuegoLogico.numero = 0;
+       JuegoLogico.numeroClikeado(JuegoLogico.numero);
        return 0;
     }
     int n1(){
-       byte numero = 1;
-       JuegoLogico.numeroClikeado(numero);
+       JuegoLogico.numero = 1;
+       JuegoLogico.numeroClikeado(JuegoLogico.numero);
        return 0;
     }
     int n2(){
-       byte numero = 2;
-       JuegoLogico.numeroClikeado(numero);
+       JuegoLogico.numero = 2;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
        return 0;
     }
     int n3(){
-       byte numero = 3;
-       JuegoLogico.numeroClikeado(numero);
+       JuegoLogico.numero = 3;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
        return 0;
     }
     int n4(){
-       byte numero = 4;
-       JuegoLogico.numeroClikeado(numero);
+       JuegoLogico.numero = 4;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
        return 0;
     }
     int n5(){
-       byte numero = 5;
-       JuegoLogico.numeroClikeado(numero);
+       JuegoLogico.numero = 5;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
        return 0;
     }
     int n6(){
-       byte numero = 6;
-       JuegoLogico.numeroClikeado(numero);
+       JuegoLogico.numero = 6;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
        return 0;
     }
     int n7(){
-       byte numero = 7;
-       JuegoLogico.numeroClikeado(numero);
+       JuegoLogico.numero = 7;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
        return 0;
     }
     int n8(){
-       byte numero = 8;
-       JuegoLogico.numeroClikeado(numero);
+       JuegoLogico.numero = 8;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
        return 0;
     }
     /**
