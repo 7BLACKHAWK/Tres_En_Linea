@@ -242,7 +242,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         }
         if(jr_UnJugador.isSelected()==false && jr_DosJugadores.isSelected()==false){
-            JOptionPane.showMessageDialog(null,"Debe seleccionar un modo de juego");
+            JOptionPane.showConfirmDialog(null, "Debe seleccionar un modo de juego", "Mensaje" ,JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE,new ImageIcon(image));
             jt_Jugador1.setText("");
             jt_Jugador2.setText("");
         }
