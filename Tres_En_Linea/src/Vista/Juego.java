@@ -254,6 +254,7 @@ public class Juego extends javax.swing.JFrame {
         jb_Q.setBackground(new java.awt.Color(0, 0, 0));
         jb_Q.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_Q.setForeground(new java.awt.Color(255, 255, 255));
+        jb_Q.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         jb_Q.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_QActionPerformed(evt);
@@ -340,33 +341,41 @@ public class Juego extends javax.swing.JFrame {
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
         switch(evt.getKeyCode()){
-              
              case java.awt.event.KeyEvent.VK_Q:
-                n0();    
+                JuegoLogico.numero = 0;
+                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
                 break;
              case java.awt.event.KeyEvent.VK_W:
-                n1();    
+                JuegoLogico.numero = 1;
+                JuegoLogico.numeroClikeado(JuegoLogico.numero);   
                 break;
              case java.awt.event.KeyEvent.VK_E:
-                n2();    
+                JuegoLogico.numero = 2;
+                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
                 break;
              case java.awt.event.KeyEvent.VK_A:
-                n3();   
+                JuegoLogico.numero = 3;
+                JuegoLogico.numeroClikeado(JuegoLogico.numero);   
                 break;
              case java.awt.event.KeyEvent.VK_S:
-                n4();    
+                JuegoLogico.numero = 4;
+                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
                 break;
              case java.awt.event.KeyEvent.VK_D:
-                n5();    
+                JuegoLogico.numero = 5;
+                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
                 break;
              case java.awt.event.KeyEvent.VK_Z:
-                n6();    
+                JuegoLogico.numero = 6;
+                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
                 break;
              case java.awt.event.KeyEvent.VK_X:
-                n7();    
+                JuegoLogico.numero = 7;
+                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
                 break;
              case java.awt.event.KeyEvent.VK_C:
-                n8();    
+                JuegoLogico.numero = 8;
+                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
                 break;
          }
     }//GEN-LAST:event_formKeyPressed
@@ -416,52 +425,7 @@ public class Juego extends javax.swing.JFrame {
         JuegoLogico.numeroClikeado(JuegoLogico.numero);
     }//GEN-LAST:event_jb_CActionPerformed
 
-    
-    int n0(){
-       JuegoLogico.numero = 0;
-       JuegoLogico.numeroClikeado(JuegoLogico.numero);
-       return 0;
-    }
-    int n1(){
-       JuegoLogico.numero = 1;
-       JuegoLogico.numeroClikeado(JuegoLogico.numero);
-       return 0;
-    }
-    int n2(){
-       JuegoLogico.numero = 2;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
-       return 0;
-    }
-    int n3(){
-       JuegoLogico.numero = 3;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
-       return 0;
-    }
-    int n4(){
-       JuegoLogico.numero = 4;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
-       return 0;
-    }
-    int n5(){
-       JuegoLogico.numero = 5;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
-       return 0;
-    }
-    int n6(){
-       JuegoLogico.numero = 6;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
-       return 0;
-    }
-    int n7(){
-       JuegoLogico.numero = 7;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
-       return 0;
-    }
-    int n8(){
-       JuegoLogico.numero = 8;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
-       return 0;
-    }
+   
     /**
      * @param args the command line arguments
      */

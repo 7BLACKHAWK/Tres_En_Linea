@@ -5,6 +5,7 @@
  */
 package Modelo;
 import Vista.Juego;
+import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JOptionPane;
@@ -14,8 +15,10 @@ import javax.swing.JOptionPane;
  * @author Marvin
  */
 public class JuegoLogico {
-    public static ImageIcon iconX = new ImageIcon("../imagenes/fichaX.png");
-    public static ImageIcon iconO = new ImageIcon("../imagenes/fichaO.png");
+    public static URL  fichaX = null;
+    public static URL  fichaO = null;
+//    public static ImageIcon iconX = new ImageIcon("../imagenes/fichaX.png");
+//    public static ImageIcon iconO = new ImageIcon("../imagenes/fichaO.png");
     public static boolean ganador;//cuando hay un ganador sera verdadero
     public static int empate;
     public static boolean turno;//turnos true = jugador1 ; false = jugador2
@@ -27,7 +30,7 @@ public class JuegoLogico {
     public static int n1=0;
     public static int n2=0;
     public static int n3=0;
-    public static byte numero;
+    public static int numero;
     
     public static void inicializarAtributos() {
         JuegoLogico.ganador = false;
@@ -59,10 +62,12 @@ public class JuegoLogico {
         if (JuegoLogico.btnNumero[numeroLbl].getName().equals(Integer.toString(numeroAuxiliar))) {
 
             if (turno) {
-                
+                fichaX = JuegoLogico.class.getResource("../imagenes/fichaX.png");
+                ImageIcon cup;
+                cup = new ImageIcon(fichaX);
                 JuegoLogico.btnNumero[numeroLbl].setName("X");
-                JuegoLogico.btnNumero[numeroLbl].setText("hola");
-                JuegoLogico.btnNumero[numeroLbl].setIcon(iconX);
+                JuegoLogico.btnNumero[numeroLbl].setText("");
+                JuegoLogico.btnNumero[numeroLbl].setIcon(cup);
 
                 //hayGanador();
 
@@ -71,10 +76,12 @@ public class JuegoLogico {
                 turno = false;
 
             } else {
-
+                fichaO = JuegoLogico.class.getResource("../imagenes/fichaO.png");
+                ImageIcon cup2;
+                cup2 = new ImageIcon(fichaO);
                 JuegoLogico.btnNumero[numeroLbl].setName("O");
-                JuegoLogico.btnNumero[numeroLbl].setText("adios");
-                JuegoLogico.btnNumero[numeroLbl].setIcon(iconO);
+                JuegoLogico.btnNumero[numeroLbl].setText("");
+                JuegoLogico.btnNumero[numeroLbl].setIcon(cup2);
                  
                 //hayGanador();
 
