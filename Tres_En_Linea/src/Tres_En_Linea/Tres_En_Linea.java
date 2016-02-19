@@ -18,7 +18,7 @@ public class Tres_En_Linea {
      * @throws javax.swing.UnsupportedLookAndFeelException
      */
     public static void main(String[] args) throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
-    UIManager.setLookAndFeel( "com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");
+    UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         Menu_Principal m1 = new Menu_Principal();
         m1.setVisible(true);
         // TODO code application logic here

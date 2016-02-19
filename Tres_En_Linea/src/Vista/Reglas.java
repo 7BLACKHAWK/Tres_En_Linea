@@ -18,7 +18,7 @@ public class Reglas extends javax.swing.JFrame {
      */
     public Reglas() {
         initComponents();
-        this.setSize(400, 375);
+        this.setSize(400, 395);
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Tres en Raya");
@@ -44,7 +44,8 @@ public class Reglas extends javax.swing.JFrame {
         jb_Cerrar.setBackground(new java.awt.Color(0, 0, 0));
         jb_Cerrar.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_Cerrar.setForeground(new java.awt.Color(255, 255, 255));
-        jb_Cerrar.setText("Entendido");
+        jb_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Entendido.png"))); // NOI18N
+        jb_Cerrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jb_Cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_CerrarActionPerformed(evt);
@@ -58,12 +59,12 @@ public class Reglas extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(138, 138, 138)
-                        .addComponent(jb_Cerrar))
-                    .addGroup(layout.createSequentialGroup()
                         .addGap(42, 42, 42)
-                        .addComponent(lb_Reglas)))
-                .addContainerGap(28, Short.MAX_VALUE))
+                        .addComponent(lb_Reglas))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(110, 110, 110)
+                        .addComponent(jb_Cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 168, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(95, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -71,8 +72,8 @@ public class Reglas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lb_Reglas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jb_Cerrar)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addComponent(jb_Cerrar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();

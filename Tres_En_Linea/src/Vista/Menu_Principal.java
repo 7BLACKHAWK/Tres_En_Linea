@@ -6,7 +6,14 @@
 package Vista;
 
 import java.awt.Color;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
@@ -16,9 +23,14 @@ public class Menu_Principal extends javax.swing.JFrame {
 
     /**
      * Creates new form Menu_Principal
+     * @throws java.lang.ClassNotFoundException
+     * @throws java.lang.InstantiationException
+     * @throws java.lang.IllegalAccessException
+     * @throws javax.swing.UnsupportedLookAndFeelException
      */
-    public Menu_Principal() {
+    public Menu_Principal() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         initComponents();
+        UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
         this.setSize(690, 690);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -26,7 +38,13 @@ public class Menu_Principal extends javax.swing.JFrame {
         this.getContentPane().setBackground(Color.BLACK);
         g_tipoJuego.add(jr_UnJugador);
         g_tipoJuego.add(jr_DosJugadores);
+        bt_InciarJuego.setBackground(Color.BLACK);
         inicio();
+//        UIManager UI=new UIManager();
+        UIManager.put("OptionPane.background",new Color(0,0,0));
+        UIManager.put("Panel.background",new Color(0,0,0));
+        UIManager.put("OptionPane.messageForeground",new Color(255,255,255));
+        UIManager.put("OptionPane.titlePane.background",new Color(0,0,0));
         
     }
     public final void inicio(){
@@ -112,12 +130,10 @@ public class Menu_Principal extends javax.swing.JFrame {
             }
         });
 
-        bt_InciarJuego.setBackground(new java.awt.Color(51, 51, 51));
+        bt_InciarJuego.setBackground(new java.awt.Color(0, 0, 0));
         bt_InciarJuego.setFont(new java.awt.Font("Consolas", 1, 18)); // NOI18N
-        bt_InciarJuego.setForeground(new java.awt.Color(255, 255, 255));
-        bt_InciarJuego.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/iniciar juego.png"))); // NOI18N
-        bt_InciarJuego.setText("Iniciar Juego");
-        bt_InciarJuego.setBorder(null);
+        bt_InciarJuego.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Iniciar.png"))); // NOI18N
+        bt_InciarJuego.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         bt_InciarJuego.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 bt_InciarJuegoActionPerformed(evt);
@@ -165,7 +181,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                 .addGap(83, 83, 83))
             .addGroup(layout.createSequentialGroup()
                 .addGap(257, 257, 257)
-                .addComponent(bt_InciarJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 167, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bt_InciarJuego)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -191,8 +207,8 @@ public class Menu_Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jt_Jugador1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jt_Jugador2, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 118, Short.MAX_VALUE)
-                .addComponent(bt_InciarJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
+                .addComponent(bt_InciarJuego, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32))
         );
 
@@ -204,10 +220,11 @@ public class Menu_Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jt_Jugador2ActionPerformed
 
     private void bt_InciarJuegoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_InciarJuegoActionPerformed
+        Image image = new BufferedImage(1, 1, BufferedImage.TYPE_INT_ARGB);
         if(("".equals(jt_Jugador1.getText()) && "".equals(jt_Jugador2.getText())) || ("".equals(jt_Jugador1.getText()) || "".equals(jt_Jugador2.getText())) || jt_Jugador1.getText().equals(jt_Jugador2.getText())){
-        JOptionPane.showMessageDialog(null, "Error: \n"
+            JOptionPane.showConfirmDialog(null, "Error: \n"
                 + " Debe completar todos los datos"
-                + " \n Los usuarios no pueden ser el mismo");
+                + " \n Los usuarios no pueden ser el mismo", "Mensaje" ,JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE,new ImageIcon(image));
         }else{
         if(jr_UnJugador.isSelected()==true){
             Juego JN = new Juego();
@@ -225,7 +242,7 @@ public class Menu_Principal extends javax.swing.JFrame {
 
         }
         if(jr_UnJugador.isSelected()==false && jr_DosJugadores.isSelected()==false){
-            JOptionPane.showMessageDialog(null, "Debe seleccionar un modo de juego");
+            JOptionPane.showMessageDialog(null,"Debe seleccionar un modo de juego");
             jt_Jugador1.setText("");
             jt_Jugador2.setText("");
         }
@@ -274,7 +291,17 @@ public class Menu_Principal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Menu_Principal().setVisible(true);
+                try {
+                    new Menu_Principal().setVisible(true);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Menu_Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (InstantiationException ex) {
+                    Logger.getLogger(Menu_Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (IllegalAccessException ex) {
+                    Logger.getLogger(Menu_Principal.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (UnsupportedLookAndFeelException ex) {
+                    Logger.getLogger(Menu_Principal.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }

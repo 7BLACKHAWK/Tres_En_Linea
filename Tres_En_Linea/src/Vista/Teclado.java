@@ -18,7 +18,7 @@ public class Teclado extends javax.swing.JFrame {
      */
     public Teclado() {
         initComponents();
-        this.setSize(450, 300);
+        this.setSize(450, 330);
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Tres en Raya");
@@ -45,7 +45,8 @@ public class Teclado extends javax.swing.JFrame {
         jb_Cerrar.setBackground(new java.awt.Color(0, 0, 0));
         jb_Cerrar.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_Cerrar.setForeground(new java.awt.Color(255, 255, 255));
-        jb_Cerrar.setText("Entendido");
+        jb_Cerrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/Entendido.png"))); // NOI18N
+        jb_Cerrar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 255, 255)));
         jb_Cerrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jb_CerrarActionPerformed(evt);
@@ -62,7 +63,7 @@ public class Teclado extends javax.swing.JFrame {
                         .addGap(29, 29, 29)
                         .addComponent(lb_Reglas))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(163, 163, 163)
+                        .addGap(134, 134, 134)
                         .addComponent(jb_Cerrar)))
                 .addContainerGap(29, Short.MAX_VALUE))
         );
@@ -73,7 +74,7 @@ public class Teclado extends javax.swing.JFrame {
                 .addComponent(lb_Reglas)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jb_Cerrar)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();

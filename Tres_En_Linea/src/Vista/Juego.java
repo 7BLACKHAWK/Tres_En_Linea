@@ -7,12 +7,25 @@ package Vista;
 
 import Modelo.JuegoLogico;
 import java.awt.Color;
+import static Controlador.Control.p0;
+import static Controlador.Control.p1;
+import static Controlador.Control.p2;
+import static Controlador.Control.p3;
+import static Controlador.Control.p4;
+import static Controlador.Control.p5;
+import static Controlador.Control.p6;
+import static Controlador.Control.p7;
+import static Controlador.Control.p8;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
  * @author Marvin
  */
 public class Juego extends javax.swing.JFrame {
+    private Object Controlador;
 
     /**
      * Creates new form Juego
@@ -34,9 +47,6 @@ public class Juego extends javax.swing.JFrame {
         String ptj2 = String.valueOf(puntosj2);
         jt_Pj1.setText(ptj1);
         jt_Pj2.setText(ptj2);
-    }
-    public final void teclas(java.awt.event.KeyEvent evt){
-    
     }
     
 
@@ -341,7 +351,18 @@ public class Juego extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        Menu_Principal MP = new Menu_Principal();
+        Menu_Principal MP = null;
+        try {
+            MP = new Menu_Principal();
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(Juego.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(Juego.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(Juego.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(Juego.class.getName()).log(Level.SEVERE, null, ex);
+        }
         MP.setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
@@ -365,48 +386,39 @@ public class Juego extends javax.swing.JFrame {
     }//GEN-LAST:event_formKeyPressed
 
     private void jb_QActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_QActionPerformed
-        JuegoLogico.numero = 0;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+        p0();
     }//GEN-LAST:event_jb_QActionPerformed
 
     private void jb_WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_WActionPerformed
-        JuegoLogico.numero = 1;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+        p1();
     }//GEN-LAST:event_jb_WActionPerformed
 
     private void jb_EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_EActionPerformed
-        JuegoLogico.numero = 2;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+        p2();
     }//GEN-LAST:event_jb_EActionPerformed
 
     private void jb_AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_AActionPerformed
-        JuegoLogico.numero = 3;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+        p3();
     }//GEN-LAST:event_jb_AActionPerformed
 
     private void jb_SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_SActionPerformed
-        JuegoLogico.numero = 4;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+        p4();
     }//GEN-LAST:event_jb_SActionPerformed
 
     private void jb_DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_DActionPerformed
-        JuegoLogico.numero = 5;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+        p5();
     }//GEN-LAST:event_jb_DActionPerformed
 
     private void jb_ZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ZActionPerformed
-        JuegoLogico.numero = 6;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+        p6();
     }//GEN-LAST:event_jb_ZActionPerformed
 
     private void jb_XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_XActionPerformed
-        JuegoLogico.numero = 7;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+        p7();
     }//GEN-LAST:event_jb_XActionPerformed
 
     private void jb_CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_CActionPerformed
-        JuegoLogico.numero = 8;
-        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+        p8();
     }//GEN-LAST:event_jb_CActionPerformed
 
     private void jMenu2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jMenu2KeyPressed
@@ -416,40 +428,31 @@ public class Juego extends javax.swing.JFrame {
     private void jRadioButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jRadioButton1KeyPressed
         switch(evt.getExtendedKeyCode()){
              case java.awt.event.KeyEvent.VK_Q:
-                JuegoLogico.numero = 0;
-                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
+                p0();
                 break;
              case java.awt.event.KeyEvent.VK_W:
-                JuegoLogico.numero = 1;
-                JuegoLogico.numeroClikeado(JuegoLogico.numero);   
+                p1();   
                 break;
              case java.awt.event.KeyEvent.VK_E:
-                JuegoLogico.numero = 2;
-                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
+                p2();   
                 break;
              case java.awt.event.KeyEvent.VK_A:
-                JuegoLogico.numero = 3;
-                JuegoLogico.numeroClikeado(JuegoLogico.numero);   
+                p3();   
                 break;
              case java.awt.event.KeyEvent.VK_S:
-                JuegoLogico.numero = 4;
-                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
+                p4();    
                 break;
              case java.awt.event.KeyEvent.VK_D:
-                JuegoLogico.numero = 5;
-                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
+                p5();    
                 break;
              case java.awt.event.KeyEvent.VK_Z:
-                JuegoLogico.numero = 6;
-                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
+                p6();    
                 break;
              case java.awt.event.KeyEvent.VK_X:
-                JuegoLogico.numero = 7;
-                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
+                p7();    
                 break;
              case java.awt.event.KeyEvent.VK_C:
-                JuegoLogico.numero = 8;
-                JuegoLogico.numeroClikeado(JuegoLogico.numero);    
+                p8();    
                 break;
          }
     }//GEN-LAST:event_jRadioButton1KeyPressed

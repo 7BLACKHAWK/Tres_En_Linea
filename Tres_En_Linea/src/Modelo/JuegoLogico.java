@@ -17,8 +17,6 @@ import javax.swing.JOptionPane;
 public class JuegoLogico {
     public static URL  fichaX = null;
     public static URL  fichaO = null;
-//    public static ImageIcon iconX = new ImageIcon("../imagenes/fichaX.png");
-//    public static ImageIcon iconO = new ImageIcon("../imagenes/fichaO.png");
     public static boolean ganador;//cuando hay un ganador sera verdadero
     public static int empate;
     public static boolean turno;//turnos true = jugador1 ; false = jugador2
@@ -63,11 +61,11 @@ public class JuegoLogico {
 
             if (turno) {
                 fichaX = JuegoLogico.class.getResource("../imagenes/fichaX.png");
-                ImageIcon cup;
-                cup = new ImageIcon(fichaX);
+                ImageIcon fichX;
+                fichX = new ImageIcon(fichaX);
                 JuegoLogico.btnNumero[numeroLbl].setName("X");
                 JuegoLogico.btnNumero[numeroLbl].setText("");
-                JuegoLogico.btnNumero[numeroLbl].setIcon(cup);
+                JuegoLogico.btnNumero[numeroLbl].setIcon(fichX);
 
                 //hayGanador();
 
@@ -77,11 +75,11 @@ public class JuegoLogico {
 
             } else {
                 fichaO = JuegoLogico.class.getResource("../imagenes/fichaO.png");
-                ImageIcon cup2;
-                cup2 = new ImageIcon(fichaO);
+                ImageIcon fichO;
+                fichO = new ImageIcon(fichaO);
                 JuegoLogico.btnNumero[numeroLbl].setName("O");
                 JuegoLogico.btnNumero[numeroLbl].setText("");
-                JuegoLogico.btnNumero[numeroLbl].setIcon(cup2);
+                JuegoLogico.btnNumero[numeroLbl].setIcon(fichO);
                  
                 //hayGanador();
 
@@ -96,7 +94,7 @@ public class JuegoLogico {
 //           if(txRecJ2.getText().equals("PC")){
 //             RandomN();      
 //            }else{
-            JOptionPane.showMessageDialog(null, "la casilla esta ocupada\nintente con otra");
+            JOptionPane.showMessageDialog(null, "La casilla esta ocupada \n intente con otra");
             //}
         }
     }
