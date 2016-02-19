@@ -19,7 +19,7 @@ public class Menu_Principal extends javax.swing.JFrame {
      */
     public Menu_Principal() {
         initComponents();
-        this.setSize(690, 680);
+        this.setSize(690, 690);
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Tres en Raya");

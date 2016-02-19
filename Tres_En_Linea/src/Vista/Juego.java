@@ -18,14 +18,20 @@ public class Juego extends javax.swing.JFrame {
      */
     public Juego() {
         initComponents();
-        this.setSize(690, 680);
+        this.setSize(690, 690);
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Tres en Raya");
         this.getContentPane().setBackground(Color.BLACK);
+        puntajeInicial();
     }
-    public void puntajeInicial(){
-    
+    public final void puntajeInicial(){
+        int puntosj1 = 0;
+        int puntosj2 = 0;
+        String ptj1 = String.valueOf(puntosj1);
+        String ptj2 = String.valueOf(puntosj2);
+        jt_Pj1.setText(ptj1);
+        jt_Pj2.setText(ptj2);
     }
 
     /**
@@ -66,6 +72,7 @@ public class Juego extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
+        j_Cerrar = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
@@ -83,6 +90,7 @@ public class Juego extends javax.swing.JFrame {
         jMenuBar3.add(jMenu6);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setUndecorated(true);
         getContentPane().setLayout(null);
 
         jl_Jugador1.setBackground(new java.awt.Color(0, 0, 0));
@@ -142,54 +150,63 @@ public class Juego extends javax.swing.JFrame {
         jb_W.setBackground(new java.awt.Color(0, 0, 0));
         jb_W.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_W.setForeground(new java.awt.Color(255, 255, 255));
+        jb_W.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         getContentPane().add(jb_W);
         jb_W.setBounds(260, 170, 140, 130);
 
         jb_E.setBackground(new java.awt.Color(0, 0, 0));
         jb_E.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_E.setForeground(new java.awt.Color(255, 255, 255));
+        jb_E.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         getContentPane().add(jb_E);
         jb_E.setBounds(430, 170, 140, 130);
 
         jb_S.setBackground(new java.awt.Color(0, 0, 0));
         jb_S.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_S.setForeground(new java.awt.Color(255, 255, 255));
+        jb_S.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         getContentPane().add(jb_S);
         jb_S.setBounds(260, 330, 140, 130);
 
         jb_D.setBackground(new java.awt.Color(0, 0, 0));
         jb_D.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_D.setForeground(new java.awt.Color(255, 255, 255));
+        jb_D.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         getContentPane().add(jb_D);
         jb_D.setBounds(430, 330, 140, 130);
 
         jb_A.setBackground(new java.awt.Color(0, 0, 0));
         jb_A.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_A.setForeground(new java.awt.Color(255, 255, 255));
+        jb_A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         getContentPane().add(jb_A);
         jb_A.setBounds(90, 330, 140, 130);
 
         jb_Z.setBackground(new java.awt.Color(0, 0, 0));
         jb_Z.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_Z.setForeground(new java.awt.Color(255, 255, 255));
+        jb_Z.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         getContentPane().add(jb_Z);
         jb_Z.setBounds(90, 480, 140, 130);
 
         jb_X.setBackground(new java.awt.Color(0, 0, 0));
         jb_X.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_X.setForeground(new java.awt.Color(255, 255, 255));
+        jb_X.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         getContentPane().add(jb_X);
         jb_X.setBounds(260, 480, 140, 130);
 
         jb_C.setBackground(new java.awt.Color(0, 0, 0));
         jb_C.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_C.setForeground(new java.awt.Color(255, 255, 255));
+        jb_C.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         getContentPane().add(jb_C);
         jb_C.setBounds(430, 480, 140, 130);
 
         jb_Q.setBackground(new java.awt.Color(0, 0, 0));
         jb_Q.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_Q.setForeground(new java.awt.Color(255, 255, 255));
+        jb_Q.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
         getContentPane().add(jb_Q);
         jb_Q.setBounds(90, 170, 140, 130);
 
@@ -210,6 +227,15 @@ public class Juego extends javax.swing.JFrame {
         });
         jMenu1.add(jMenuItem1);
 
+        j_Cerrar.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
+        j_Cerrar.setText("Salir");
+        j_Cerrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                j_CerrarActionPerformed(evt);
+            }
+        });
+        jMenu1.add(j_Cerrar);
+
         jMenuBar1.add(jMenu1);
 
         jMenu2.setText("Ayuda");
@@ -217,10 +243,20 @@ public class Juego extends javax.swing.JFrame {
 
         jMenuItem2.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jMenuItem2.setText("Como Jugar!");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem2);
 
         jMenuItem3.setFont(new java.awt.Font("Consolas", 1, 14)); // NOI18N
         jMenuItem3.setText("Jugar con Teclado");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem3);
 
         jMenuBar1.add(jMenu2);
@@ -235,6 +271,20 @@ public class Juego extends javax.swing.JFrame {
         MP.setVisible(true);
         dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void j_CerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_j_CerrarActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_j_CerrarActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Reglas rg = new Reglas();
+        rg.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        Teclado tc = new Teclado();
+        tc.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -287,6 +337,7 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JMenuItem j_Cerrar;
     private javax.swing.JButton jb_A;
     private javax.swing.JButton jb_C;
     private javax.swing.JButton jb_D;
@@ -302,7 +353,7 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JLabel jl_PuntosJ2;
     public static javax.swing.JTextField jt_J1;
     public static javax.swing.JTextField jt_J2;
-    private javax.swing.JTextField jt_Pj1;
-    private javax.swing.JTextField jt_Pj2;
+    public static javax.swing.JTextField jt_Pj1;
+    public static javax.swing.JTextField jt_Pj2;
     // End of variables declaration//GEN-END:variables
 }
