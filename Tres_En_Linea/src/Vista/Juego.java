@@ -5,6 +5,7 @@
  */
 package Vista;
 
+import Modelo.JuegoLogico;
 import java.awt.Color;
 
 /**
@@ -24,6 +25,7 @@ public class Juego extends javax.swing.JFrame {
         setTitle("Tres en Raya");
         this.getContentPane().setBackground(Color.BLACK);
         puntajeInicial();
+        JuegoLogico.inicializarAtributos();
     }
     public final void puntajeInicial(){
         int puntosj1 = 0;
@@ -33,6 +35,7 @@ public class Juego extends javax.swing.JFrame {
         jt_Pj1.setText(ptj1);
         jt_Pj2.setText(ptj2);
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -91,6 +94,11 @@ public class Juego extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
+        addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                formKeyPressed(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         jl_Jugador1.setBackground(new java.awt.Color(0, 0, 0));
@@ -151,6 +159,11 @@ public class Juego extends javax.swing.JFrame {
         jb_W.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_W.setForeground(new java.awt.Color(255, 255, 255));
         jb_W.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jb_W.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_WActionPerformed(evt);
+            }
+        });
         getContentPane().add(jb_W);
         jb_W.setBounds(260, 170, 140, 130);
 
@@ -158,6 +171,11 @@ public class Juego extends javax.swing.JFrame {
         jb_E.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_E.setForeground(new java.awt.Color(255, 255, 255));
         jb_E.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jb_E.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_EActionPerformed(evt);
+            }
+        });
         getContentPane().add(jb_E);
         jb_E.setBounds(430, 170, 140, 130);
 
@@ -165,6 +183,11 @@ public class Juego extends javax.swing.JFrame {
         jb_S.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_S.setForeground(new java.awt.Color(255, 255, 255));
         jb_S.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jb_S.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_SActionPerformed(evt);
+            }
+        });
         getContentPane().add(jb_S);
         jb_S.setBounds(260, 330, 140, 130);
 
@@ -172,6 +195,11 @@ public class Juego extends javax.swing.JFrame {
         jb_D.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_D.setForeground(new java.awt.Color(255, 255, 255));
         jb_D.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jb_D.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_DActionPerformed(evt);
+            }
+        });
         getContentPane().add(jb_D);
         jb_D.setBounds(430, 330, 140, 130);
 
@@ -179,6 +207,11 @@ public class Juego extends javax.swing.JFrame {
         jb_A.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_A.setForeground(new java.awt.Color(255, 255, 255));
         jb_A.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jb_A.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_AActionPerformed(evt);
+            }
+        });
         getContentPane().add(jb_A);
         jb_A.setBounds(90, 330, 140, 130);
 
@@ -186,6 +219,11 @@ public class Juego extends javax.swing.JFrame {
         jb_Z.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_Z.setForeground(new java.awt.Color(255, 255, 255));
         jb_Z.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jb_Z.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_ZActionPerformed(evt);
+            }
+        });
         getContentPane().add(jb_Z);
         jb_Z.setBounds(90, 480, 140, 130);
 
@@ -193,6 +231,11 @@ public class Juego extends javax.swing.JFrame {
         jb_X.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_X.setForeground(new java.awt.Color(255, 255, 255));
         jb_X.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jb_X.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_XActionPerformed(evt);
+            }
+        });
         getContentPane().add(jb_X);
         jb_X.setBounds(260, 480, 140, 130);
 
@@ -200,13 +243,22 @@ public class Juego extends javax.swing.JFrame {
         jb_C.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_C.setForeground(new java.awt.Color(255, 255, 255));
         jb_C.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jb_C.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_CActionPerformed(evt);
+            }
+        });
         getContentPane().add(jb_C);
         jb_C.setBounds(430, 480, 140, 130);
 
         jb_Q.setBackground(new java.awt.Color(0, 0, 0));
         jb_Q.setFont(new java.awt.Font("Consolas", 1, 16)); // NOI18N
         jb_Q.setForeground(new java.awt.Color(255, 255, 255));
-        jb_Q.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/fondo.png"))); // NOI18N
+        jb_Q.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jb_QActionPerformed(evt);
+            }
+        });
         getContentPane().add(jb_Q);
         jb_Q.setBounds(90, 170, 140, 130);
 
@@ -286,6 +338,130 @@ public class Juego extends javax.swing.JFrame {
         tc.setVisible(true);
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
+        switch(evt.getKeyCode()){
+              
+             case java.awt.event.KeyEvent.VK_Q:
+                n0();    
+                break;
+             case java.awt.event.KeyEvent.VK_W:
+                n1();    
+                break;
+             case java.awt.event.KeyEvent.VK_E:
+                n2();    
+                break;
+             case java.awt.event.KeyEvent.VK_A:
+                n3();   
+                break;
+             case java.awt.event.KeyEvent.VK_S:
+                n4();    
+                break;
+             case java.awt.event.KeyEvent.VK_D:
+                n5();    
+                break;
+             case java.awt.event.KeyEvent.VK_Z:
+                n6();    
+                break;
+             case java.awt.event.KeyEvent.VK_X:
+                n7();    
+                break;
+             case java.awt.event.KeyEvent.VK_C:
+                n8();    
+                break;
+         }
+    }//GEN-LAST:event_formKeyPressed
+
+    private void jb_QActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_QActionPerformed
+        JuegoLogico.numero = 0;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+    }//GEN-LAST:event_jb_QActionPerformed
+
+    private void jb_WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_WActionPerformed
+        JuegoLogico.numero = 1;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+    }//GEN-LAST:event_jb_WActionPerformed
+
+    private void jb_EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_EActionPerformed
+        JuegoLogico.numero = 2;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+    }//GEN-LAST:event_jb_EActionPerformed
+
+    private void jb_AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_AActionPerformed
+        JuegoLogico.numero = 3;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+    }//GEN-LAST:event_jb_AActionPerformed
+
+    private void jb_SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_SActionPerformed
+        JuegoLogico.numero = 4;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+    }//GEN-LAST:event_jb_SActionPerformed
+
+    private void jb_DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_DActionPerformed
+        JuegoLogico.numero = 5;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+    }//GEN-LAST:event_jb_DActionPerformed
+
+    private void jb_ZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ZActionPerformed
+        JuegoLogico.numero = 6;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+    }//GEN-LAST:event_jb_ZActionPerformed
+
+    private void jb_XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_XActionPerformed
+        JuegoLogico.numero = 7;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+    }//GEN-LAST:event_jb_XActionPerformed
+
+    private void jb_CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_CActionPerformed
+        JuegoLogico.numero = 8;
+        JuegoLogico.numeroClikeado(JuegoLogico.numero);
+    }//GEN-LAST:event_jb_CActionPerformed
+
+    
+    int n0(){
+       byte numero = 0;
+       JuegoLogico.numeroClikeado(numero);
+       return 0;
+    }
+    int n1(){
+       byte numero = 1;
+       JuegoLogico.numeroClikeado(numero);
+       return 0;
+    }
+    int n2(){
+       byte numero = 2;
+       JuegoLogico.numeroClikeado(numero);
+       return 0;
+    }
+    int n3(){
+       byte numero = 3;
+       JuegoLogico.numeroClikeado(numero);
+       return 0;
+    }
+    int n4(){
+       byte numero = 4;
+       JuegoLogico.numeroClikeado(numero);
+       return 0;
+    }
+    int n5(){
+       byte numero = 5;
+       JuegoLogico.numeroClikeado(numero);
+       return 0;
+    }
+    int n6(){
+       byte numero = 6;
+       JuegoLogico.numeroClikeado(numero);
+       return 0;
+    }
+    int n7(){
+       byte numero = 7;
+       JuegoLogico.numeroClikeado(numero);
+       return 0;
+    }
+    int n8(){
+       byte numero = 8;
+       JuegoLogico.numeroClikeado(numero);
+       return 0;
+    }
     /**
      * @param args the command line arguments
      */
@@ -338,15 +514,15 @@ public class Juego extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JMenuItem j_Cerrar;
-    private javax.swing.JButton jb_A;
-    private javax.swing.JButton jb_C;
-    private javax.swing.JButton jb_D;
-    private javax.swing.JButton jb_E;
-    private javax.swing.JButton jb_Q;
-    private javax.swing.JButton jb_S;
-    private javax.swing.JButton jb_W;
-    private javax.swing.JButton jb_X;
-    private javax.swing.JButton jb_Z;
+    public static javax.swing.JButton jb_A;
+    public static javax.swing.JButton jb_C;
+    public static javax.swing.JButton jb_D;
+    public static javax.swing.JButton jb_E;
+    public static javax.swing.JButton jb_Q;
+    public static javax.swing.JButton jb_S;
+    public static javax.swing.JButton jb_W;
+    public static javax.swing.JButton jb_X;
+    public static javax.swing.JButton jb_Z;
     private javax.swing.JLabel jl_Jugador1;
     private javax.swing.JLabel jl_Jugador2;
     private javax.swing.JLabel jl_PuntosJ1;
