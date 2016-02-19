@@ -16,8 +16,11 @@ import static Controlador.Control.p5;
 import static Controlador.Control.p6;
 import static Controlador.Control.p7;
 import static Controlador.Control.p8;
+import java.net.URL;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.UnsupportedLookAndFeelException;
 
 /**
@@ -48,6 +51,8 @@ public class Juego extends javax.swing.JFrame {
         jt_Pj1.setText(ptj1);
         jt_Pj2.setText(ptj2);
     }
+    
+
     
 
     /**

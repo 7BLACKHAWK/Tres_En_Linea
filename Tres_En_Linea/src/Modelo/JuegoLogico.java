@@ -5,6 +5,7 @@
  */
 package Modelo;
 import Vista.Juego;
+import java.awt.Color;
 import java.net.URL;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -67,7 +68,7 @@ public class JuegoLogico {
                 JuegoLogico.btnNumero[numeroLbl].setText("");
                 JuegoLogico.btnNumero[numeroLbl].setIcon(fichX);
 
-                //hayGanador();
+                hayGanador();
 
                 empate++;
 
@@ -81,7 +82,7 @@ public class JuegoLogico {
                 JuegoLogico.btnNumero[numeroLbl].setText("");
                 JuegoLogico.btnNumero[numeroLbl].setIcon(fichO);
                  
-                //hayGanador();
+                hayGanador();
 
                 empate++;
 
@@ -98,4 +99,159 @@ public class JuegoLogico {
             //}
         }
     }
+    
+    
+    
+    public static void hayGanador() {
+               
+        //------COMPARACIONES HORIZONTALES----\\
+        if (Juego.jb_Q.getName().equals(Juego.jb_W.getName()) && Juego.jb_Q.getName().equals(Juego.jb_E.getName())) {
+            JuegoLogico.ganador = true;
+        }
+        if (Juego.jb_A.getName().equals(Juego.jb_S.getName()) && Juego.jb_A.getName().equals(Juego.jb_D.getName())) {
+            JuegoLogico.ganador = true;
+        }
+        if (Juego.jb_Z.getName().equals(Juego.jb_X.getName()) && Juego.jb_Z.getName().equals(Juego.jb_C.getName())) {
+            JuegoLogico.ganador = true;
+        }
+
+        //------COMPARACIONES VERTICALES----\\
+        if (Juego.jb_Q.getName().equals(Juego.jb_A.getName()) && Juego.jb_Q.getName().equals(Juego.jb_Z.getName())) {
+
+            JuegoLogico.ganador = true;
+        }
+        if (Juego.jb_W.getName().equals(Juego.jb_S.getName()) && Juego.jb_W.getName().equals(Juego.jb_X.getName())) {
+
+            JuegoLogico.ganador = true;
+        }
+        if (Juego.jb_E.getName().equals(Juego.jb_D.getName()) && Juego.jb_E.getName().equals(Juego.jb_C.getName())) {
+
+            JuegoLogico.ganador = true;
+        }
+
+        //------COMPARACIONES DIAGONALES----\\
+        if (Juego.jb_Q.getName().equals(Juego.jb_S.getName()) && Juego.jb_Q.getName().equals(Juego.jb_C.getName())) {
+
+            JuegoLogico.ganador = true;
+        }
+        if (Juego.jb_Z.getName().equals(Juego.jb_S.getName()) && Juego.jb_Z.getName().equals(Juego.jb_E.getName())) {
+
+            JuegoLogico.ganador = true;
+        }
+
+        if (JuegoLogico.ganador) {
+            ganador();
+
+        }
+        if (JuegoLogico.empate == 9 && ganador == false) {
+
+            //Se empieza una nueva partida
+            turno = !turno;
+            ImageIcon icon = new ImageIcon("../imagenes/repeat_opt.png.jpg");
+            int seleccion = JOptionPane.showConfirmDialog(null,"                   Juego empatado \n \n"+ 
+            "            Quiere jugar otra partida?", "EMPATE", JOptionPane.YES_NO_OPTION, 
+            JOptionPane.QUESTION_MESSAGE, icon);
+            if (seleccion == 0) {
+//            dispose();
+//            MenuPrincipal principal1 = new MenuPrincipal();
+//            principal1.setVisible(true);
+//            principal1.Inicio();
+            } else {
+
+                
+                System.exit(0);
+            }
+        }
+    }
+    
+    public static void ganador() {
+        
+        int seleccion; 
+        JuegoLogico.ganador = true;
+        if (turno) {
+//           Juego.SumadorJ1();
+//           Juego.RestadorJ2();
+//           Juego.listar();
+////           Juego.ordenar();
+////           Juego.listar();
+//           Juego.Guardar();
+           
+           
+            v=1;
+//            this.lbInfo.setForeground(Color.red);
+//            this.lbInfo.setText(txRecJ1.getText() + " has Ganado FELICITACIONES!");
+
+            
+           
+            Juego.jb_Q.setEnabled(false);
+            Juego.jb_W.setEnabled(false);
+            Juego.jb_E.setEnabled(false);
+            Juego.jb_A.setEnabled(false);
+            Juego.jb_S.setEnabled(false);
+            Juego.jb_D.setEnabled(false);
+            Juego.jb_Z.setEnabled(false);
+            Juego.jb_X.setEnabled(false);
+            Juego.jb_C.setEnabled(false);
+            
+//            ImageIcon icon = new ImageIcon("../imagenes/repeat_opt.png.jpg");
+            seleccion = JOptionPane.showConfirmDialog(null, 
+            Juego.jt_J1.getText() + "\n has Ganado FELICITACIONES \n \n Quiere jugar otra partida?",
+            "GANADOR JUGADOR 1", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            Juego.jb_Q.setEnabled(false);
+            Juego.jb_W.setEnabled(false);
+            Juego.jb_E.setEnabled(false);
+            Juego.jb_A.setEnabled(false);
+            Juego.jb_S.setEnabled(false);
+            Juego.jb_D.setEnabled(false);
+            Juego.jb_Z.setEnabled(false);
+            Juego.jb_X.setEnabled(false);
+            Juego.jb_C.setEnabled(false);
+            turno=true;
+        
+        } else {
+//            Juego.SumadorJ2();
+//            Juego.RestadorJ1();
+//            Juego.listar();
+//            Juego.Guardar();
+
+//            ImageIcon icon = new ImageIcon("../imagenes/repeat_opt.png.jpg");
+            seleccion = JOptionPane.showConfirmDialog(null, 
+            Juego.jt_J2.getText() + "\n has Ganado FELICITACIONES \n \n Quiere jugar otra partida?",
+            "GANADOR JUGADOR 2", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+
+            Juego.jb_Q.setEnabled(false);
+            Juego.jb_W.setEnabled(false);
+            Juego.jb_E.setEnabled(false);
+            Juego.jb_A.setEnabled(false);
+            Juego.jb_S.setEnabled(false);
+            Juego.jb_D.setEnabled(false);
+            Juego.jb_Z.setEnabled(false);
+            Juego.jb_X.setEnabled(false);
+            Juego.jb_C.setEnabled(false);
+
+            
+        }
+        if (seleccion == 0) {
+
+//            Juego.dispose();
+            String j1 = Juego.jt_J1.getText();
+            String j2 = Juego.jt_J2.getText();         
+            Juego j = new Juego();
+            j.setVisible(true);
+            Juego.jt_J1.setText(j1);
+            Juego.jt_J2.setText(j2);
+//            icJ1.setIcon(MenuPrincipal.lbI1.getIcon());
+//            icJ2.setIcon(MenuPrincipal.lbI2.getIcon());
+
+            
+        } else {
+//            dispose();
+//            MenuPrincipal m = new MenuPrincipal();
+//            m.setVisible(true);
+//            m.Inicio();
+        }
+
+    }
+    
+    
 }
