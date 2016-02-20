@@ -37,7 +37,7 @@ public class cliente extends Observable{
         host = ip;
         num = -1;
         turnox = 0;
-       ruta = "";
+        ruta = "";
         inicializarcliente();
         
     }
