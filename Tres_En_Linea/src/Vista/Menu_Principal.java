@@ -244,7 +244,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                 int port;
                 System.out.println("Please input the IP: ");
 		//ip = scanner.nextLine();
-                ip = "localhost";
+                ip = "192.168.1.3";
 		System.out.println("Please input the port: ");
 		port = 3552;
                 cliente client = new cliente(ip,port);
