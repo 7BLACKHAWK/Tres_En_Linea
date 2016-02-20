@@ -29,9 +29,6 @@ public class JuegoLogico {
     public static int contador;
     
     
-    public static int puntos1 = 0;
-    public static int puntos2 = 0;
-    
     public static Juego JN1;
     public static int v=0;
     public static int i=0;
@@ -162,9 +159,20 @@ public class JuegoLogico {
             "Quiere jugar otra partida?", "EMPATE", JOptionPane.YES_NO_OPTION, 
             JOptionPane.QUESTION_MESSAGE);
             if (seleccion == 0) {
+            boolean ind = JN1.isIndividual();
+            JN1.dispose();
+            String j1 = Juego.jt_J1.getText();
+            String j2 = Juego.jt_J2.getText();
+            
+            String ptsf1 = Juego.jt_Pj1.getText();
+            String ptsf2 = Juego.jt_Pj2.getText();
+            Juego j = new Juego(ind);
+            j.setVisible(true);
+            Juego.jt_J1.setText(j1);
+            Juego.jt_J2.setText(j2);
+            Juego.jt_Pj1.setText(ptsf1);
+            Juego.jt_Pj2.setText(ptsf2);
             } else {
-
-                
                 System.exit(0);
             }
         }
@@ -175,10 +183,7 @@ public class JuegoLogico {
         int seleccion; 
         JuegoLogico.ganador = true;
         if (turno) {
-           
             v=1;
-            
-           
             Juego.jb_Q.setEnabled(false);
             Juego.jb_W.setEnabled(false);
             Juego.jb_E.setEnabled(false);
@@ -188,8 +193,11 @@ public class JuegoLogico {
             Juego.jb_Z.setEnabled(false);
             Juego.jb_X.setEnabled(false);
             Juego.jb_C.setEnabled(false);
-            int a= puntos1 + 1;
-            int b= puntos2 - 1;
+            
+            int a= Integer.parseInt(Juego.jt_Pj1.getText());
+            int b= Integer.parseInt(Juego.jt_Pj1.getText());
+            a++;
+            b--;
             
             String pt1= Integer.toString(a);
             String pt2 =Integer.toString(b);
@@ -215,6 +223,16 @@ public class JuegoLogico {
             seleccion = JOptionPane.showConfirmDialog(null, 
             Juego.jt_J2.getText() + "\n has Ganado FELICITACIONES \n \n Quiere jugar otra partida?",
             "GANADOR JUGADOR 2", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+            
+            int a= Integer.parseInt(Juego.jt_Pj1.getText());
+            int b= Integer.parseInt(Juego.jt_Pj2.getText());
+            a--;
+            b++;
+            
+            String pt1= Integer.toString(a);
+            String pt2 =Integer.toString(b);
+            Juego.jt_Pj1.setText(pt1);
+            Juego.jt_Pj2.setText(pt2);
 
             Juego.jb_Q.setEnabled(false);
             Juego.jb_W.setEnabled(false);
@@ -224,23 +242,25 @@ public class JuegoLogico {
             Juego.jb_D.setEnabled(false);
             Juego.jb_Z.setEnabled(false);
             Juego.jb_X.setEnabled(false);
-            Juego.jb_C.setEnabled(false);
-
-            
+            Juego.jb_C.setEnabled(false);   
         }
         if (seleccion == 0) {
             boolean ind = JN1.isIndividual();
             JN1.dispose();
             String j1 = Juego.jt_J1.getText();
             String j2 = Juego.jt_J2.getText();
-            Juego j = new Juego(ind);
             
+            String ptsf1 = Juego.jt_Pj1.getText();
+            String ptsf2 = Juego.jt_Pj2.getText();
+            Juego j = new Juego(ind);
             j.setVisible(true);
             Juego.jt_J1.setText(j1);
             Juego.jt_J2.setText(j2);
-
-            
-        } 
+            Juego.jt_Pj1.setText(ptsf1);
+            Juego.jt_Pj2.setText(ptsf2);
+        }else{
+            System.exit(0);
+        }
     }
 
     public static void inicializarAtributos(cliente client) {
@@ -276,9 +296,9 @@ public class JuegoLogico {
     }
     public static void mithread(){
         while(true){
-            System.out.print("");
+            System.out.print("a");
             if(cliente.getserver() != -1 && contador != cliente.getserver()){
-                System.out.print("");
+                System.out.print("as");
                 try {
                     contador = cliente.getserver();
                     fichaX = new URL(cliente.getcliente());

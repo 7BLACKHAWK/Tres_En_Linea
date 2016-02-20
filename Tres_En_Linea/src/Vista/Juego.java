@@ -45,6 +45,8 @@ public class Juego extends javax.swing.JFrame implements Observer {
     public static boolean isIndividual() {
         return individual;
     }
+    public int puntosj1 = 0;
+    public int puntosj2 = 0;
     private Object Controlador;
 
     /**
@@ -57,8 +59,8 @@ public class Juego extends javax.swing.JFrame implements Observer {
         this.individual = indiviual;
         client = cliente;
         initComponents();
-        this.setSize(690, 690);
-        setLocationRelativeTo(null);
+        this.setSize(690, 750);
+//        setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Tres en Raya");
         this.getContentPane().setBackground(Color.BLACK);
@@ -69,7 +71,7 @@ public class Juego extends javax.swing.JFrame implements Observer {
     public Juego(boolean indiviual) {
         this.individual = indiviual;
         initComponents();
-        this.setSize(690, 690);
+        this.setSize(690, 750);
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Tres en Raya");
@@ -79,8 +81,6 @@ public class Juego extends javax.swing.JFrame implements Observer {
     }
 
     public final void puntajeInicial() {
-        int puntosj1 = 0;
-        int puntosj2 = 0;
         String ptj1 = String.valueOf(puntosj1);
         String ptj2 = String.valueOf(puntosj2);
         jt_Pj1.setText(ptj1);
@@ -144,7 +144,6 @@ public class Juego extends javax.swing.JFrame implements Observer {
         jMenuBar3.add(jMenu6);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setUndecorated(true);
         addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 formKeyPressed(evt);

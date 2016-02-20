@@ -34,7 +34,7 @@ public class Menu_Principal extends javax.swing.JFrame {
     public Menu_Principal() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         initComponents();
         UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-        this.setSize(690, 690);
+        this.setSize(690, 750);
         setLocationRelativeTo(null);
         setResizable(false);
         setTitle("Tres en Raya");
@@ -244,7 +244,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                 int port;
                 System.out.println("Please input the IP: ");
 		//ip = scanner.nextLine();
-                ip = "192.168.1.3";
+                ip = "192.168.0.100";
 		System.out.println("Please input the port: ");
 		port = 3552;
                 cliente client = new cliente(ip,port);
