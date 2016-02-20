@@ -23,24 +23,21 @@ public class cliente extends Observable{
     int contador = 1;
     int primeravez = 0;
     String llega;
-    int num[];
-    String ruta[];
+    int num;
+    String ruta;
     String usuario = "usuario no registrado";
     boolean registrar = true;
     private Thread mythread = null;
     String host;
     int port;
-    boolean turno;
+    int turnox;
     
     public cliente(String ip, int puerto) {
         port = puerto;
         host = ip;
-        num = new int[2];
-       ruta = new String[2];
-       for(int i = 0  ; i < 2 ; i++){
-           num[i] = 0;
-           ruta[i] = "";
-       }
+        num = -1;
+        turnox = 0;
+       ruta = "";
         inicializarcliente();
         
     }
@@ -51,14 +48,14 @@ public class cliente extends Observable{
    }
    
         
-    public String[] getcliente(){
+    public String getcliente(){
         return ruta;
     }
-    public int[] getserver(){
+    public int getserver(){
         return num;
     }
     public boolean existecliente(){
-        if(ruta[1] != ""){
+        if(ruta != ""){
             return true;
         }
         else{
@@ -86,13 +83,16 @@ public class cliente extends Observable{
              public void run(){
                  
                  try {
-                     //aqui va todo
+                     System.out.println("enviaado1 " + num + "   " + ruta);
+                     turnox = streamin.read();
+                     System.out.println("enviaado1 " + num + "   " + ruta);
                      while(true){
-                     //streamOut.writeUTF("hola que hace");
-                         ruta[0] = streamin.readUTF();
-                         num[0] = streamin.read();
-                         ruta[1] = ruta[0];
-                         num[1] = num[0];
+                     System.out.println("enviaado1 " + num + "   " + ruta);
+                     ruta = streamin.readUTF();
+                     num = streamin.read();
+                     System.out.println("enviaado2 " + num + "   " + ruta);
+                     actualizar();
+                     
                      }
                  } catch (IOException ex) {
                      Logger.getLogger(cliente.class.getName()).log(Level.SEVERE, null, ex);

@@ -5,6 +5,15 @@
  */
 package Vista;
 
+import static Controlador.Control.f0;
+import static Controlador.Control.f1;
+import static Controlador.Control.f2;
+import static Controlador.Control.f3;
+import static Controlador.Control.f4;
+import static Controlador.Control.f5;
+import static Controlador.Control.f6;
+import static Controlador.Control.f7;
+import static Controlador.Control.f8;
 import Modelo.JuegoLogico;
 import java.awt.Color;
 import static Controlador.Control.p0;
@@ -16,24 +25,37 @@ import static Controlador.Control.p5;
 import static Controlador.Control.p6;
 import static Controlador.Control.p7;
 import static Controlador.Control.p8;
-import java.net.URL;
+import static Controlador.Control.pc;
+import Modelo.cliente;
+import java.util.Observable;
+import java.util.Observer;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.ImageIcon;
-import javax.swing.JOptionPane;
 import javax.swing.UnsupportedLookAndFeelException;
 
 /**
  *
  * @author Marvin
  */
-public class Juego extends javax.swing.JFrame {
+public class Juego extends javax.swing.JFrame implements Observer {
+
+    /**
+     * @return the individual
+     */
+    public static boolean isIndividual() {
+        return individual;
+    }
     private Object Controlador;
 
     /**
      * Creates new form Juego
      */
-    public Juego() {
+    static cliente client;
+    private static boolean individual;
+
+    public Juego(cliente cliente, boolean indiviual) {
+        this.individual = indiviual;
+        client = cliente;
         initComponents();
         this.setSize(690, 690);
         setLocationRelativeTo(null);
@@ -41,9 +63,22 @@ public class Juego extends javax.swing.JFrame {
         setTitle("Tres en Raya");
         this.getContentPane().setBackground(Color.BLACK);
         puntajeInicial();
-        JuegoLogico.inicializarAtributos();
+        JuegoLogico.inicializarAtributos(this.client);
     }
-    public final void puntajeInicial(){
+
+    public Juego(boolean indiviual) {
+        this.individual = indiviual;
+        initComponents();
+        this.setSize(690, 690);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setTitle("Tres en Raya");
+        this.getContentPane().setBackground(Color.BLACK);
+        puntajeInicial();
+        JuegoLogico.inicializarAtributos(this);
+    }
+
+    public final void puntajeInicial() {
         int puntosj1 = 0;
         int puntosj2 = 0;
         String ptj1 = String.valueOf(puntosj1);
@@ -51,9 +86,6 @@ public class Juego extends javax.swing.JFrame {
         jt_Pj1.setText(ptj1);
         jt_Pj2.setText(ptj2);
     }
-    
-
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -387,82 +419,180 @@ public class Juego extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void formKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_formKeyPressed
-        
+
     }//GEN-LAST:event_formKeyPressed
 
     private void jb_QActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_QActionPerformed
-        p0();
+        if (isIndividual()) {
+            p0();
+            pc();
+        } else {
+            f0();
+        }
     }//GEN-LAST:event_jb_QActionPerformed
 
     private void jb_WActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_WActionPerformed
-        p1();
+        if (isIndividual()) {
+            p1();
+            pc();
+        } else {
+            f1();
+        }
     }//GEN-LAST:event_jb_WActionPerformed
 
     private void jb_EActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_EActionPerformed
-        p2();
+        if (isIndividual()) {
+            p2();
+            pc();
+        } else {
+            f2();
+        }
     }//GEN-LAST:event_jb_EActionPerformed
 
     private void jb_AActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_AActionPerformed
-        p3();
+        if (isIndividual()) {
+            p3();
+            pc();
+        } else {
+            f3();
+        }
     }//GEN-LAST:event_jb_AActionPerformed
 
     private void jb_SActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_SActionPerformed
-        p4();
+        if (isIndividual()) {
+            p4();
+            pc();
+        } else {
+            f4();
+        }
     }//GEN-LAST:event_jb_SActionPerformed
 
     private void jb_DActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_DActionPerformed
-        p5();
+        if (isIndividual()) {
+            p5();
+            pc();
+        } else {
+            f5();
+        }
     }//GEN-LAST:event_jb_DActionPerformed
 
     private void jb_ZActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_ZActionPerformed
-        p6();
+        if (isIndividual()) {
+            p6();
+            pc();
+        } else {
+            f6();
+        }
     }//GEN-LAST:event_jb_ZActionPerformed
 
     private void jb_XActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_XActionPerformed
-        p7();
+        if (isIndividual()) {
+            p7();
+            pc();
+        } else {
+            f7();
+        }
     }//GEN-LAST:event_jb_XActionPerformed
 
     private void jb_CActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_CActionPerformed
-        p8();
+        if (isIndividual()) {
+            p8();
+            pc();
+        } else {
+            f8();
+        }
     }//GEN-LAST:event_jb_CActionPerformed
 
     private void jMenu2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jMenu2KeyPressed
-        
+
     }//GEN-LAST:event_jMenu2KeyPressed
 
     private void jRadioButton1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jRadioButton1KeyPressed
-        switch(evt.getExtendedKeyCode()){
-             case java.awt.event.KeyEvent.VK_Q:
-                p0();
+        switch (evt.getExtendedKeyCode()) {
+            case java.awt.event.KeyEvent.VK_Q: {
+                if (isIndividual()) {
+                    p0();
+                    pc();
+                } else {
+                    f0();
+                }
                 break;
-             case java.awt.event.KeyEvent.VK_W:
-                p1();   
+            }
+            case java.awt.event.KeyEvent.VK_W: {
+                if (isIndividual()) {
+                    p1();
+                    pc();
+                } else {
+                    f1();
+                }
                 break;
-             case java.awt.event.KeyEvent.VK_E:
-                p2();   
+            }
+            case java.awt.event.KeyEvent.VK_E: {
+                if (isIndividual()) {
+                    p2();
+                    pc();
+                } else {
+                    f2();
+                }
                 break;
-             case java.awt.event.KeyEvent.VK_A:
-                p3();   
+            }
+            case java.awt.event.KeyEvent.VK_A: {
+                if (isIndividual()) {
+                    p3();
+                    pc();
+                } else {
+                    f3();
+                }
                 break;
-             case java.awt.event.KeyEvent.VK_S:
-                p4();    
+            }
+            case java.awt.event.KeyEvent.VK_S: {
+                if (isIndividual()) {
+                    p4();
+                    pc();
+                } else {
+                    f4();
+                }
                 break;
-             case java.awt.event.KeyEvent.VK_D:
-                p5();    
+            }
+            case java.awt.event.KeyEvent.VK_D: {
+                if (isIndividual()) {
+                    p5();
+                    pc();
+                } else {
+                    f5();
+                }
                 break;
-             case java.awt.event.KeyEvent.VK_Z:
-                p6();    
+            }
+            case java.awt.event.KeyEvent.VK_Z: {
+                if (isIndividual()) {
+                    p6();
+                    pc();
+                } else {
+                    f6();
+                }
                 break;
-             case java.awt.event.KeyEvent.VK_X:
-                p7();    
+            }
+            case java.awt.event.KeyEvent.VK_X: {
+                if (isIndividual()) {
+                    p7();
+                    pc();
+                } else {
+                    f7();
+                }
                 break;
-             case java.awt.event.KeyEvent.VK_C:
-                p8();    
+            }
+            case java.awt.event.KeyEvent.VK_C: {
+                if (isIndividual()) {
+                    p8();
+                    pc();
+                } else {
+                    f8();
+                }
                 break;
-         }
+            }
+        }
     }//GEN-LAST:event_jRadioButton1KeyPressed
 
-   
     /**
      * @param args the command line arguments
      */
@@ -493,7 +623,7 @@ public class Juego extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Juego().setVisible(true);
+                new Juego(isIndividual()).setVisible(true);
             }
         });
     }
@@ -534,4 +664,9 @@ public class Juego extends javax.swing.JFrame {
     public static javax.swing.JTextField jt_Pj1;
     public static javax.swing.JTextField jt_Pj2;
     // End of variables declaration//GEN-END:variables
+
+    @Override
+    public void update(Observable o, Object arg) {
+        this.repaint();
+    }
 }

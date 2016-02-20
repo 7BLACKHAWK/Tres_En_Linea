@@ -58,4 +58,55 @@ public class Control {
     return 0;
     }
     
+    
+    public static int f0(){
+        JuegoLogico.numero = 0;
+        JuegoLogico.numeroClikeado1(JuegoLogico.numero); 
+    return 0;
+    }
+    public static int f1(){
+        JuegoLogico.numero = 1;
+        JuegoLogico.numeroClikeado1(JuegoLogico.numero); 
+    return 0;
+    }
+    public static int f2(){
+        JuegoLogico.numero = 2;
+        JuegoLogico.numeroClikeado1(JuegoLogico.numero); 
+    return 0;
+    }
+    public static int f3(){
+        JuegoLogico.numero = 3;
+        JuegoLogico.numeroClikeado1(JuegoLogico.numero); 
+    return 0;
+    }
+    public static int f4(){
+        JuegoLogico.numero = 4;
+        JuegoLogico.numeroClikeado1(JuegoLogico.numero); 
+    return 0;
+    }
+    public static int f5(){
+        JuegoLogico.numero = 5;
+        JuegoLogico.numeroClikeado1(JuegoLogico.numero); 
+    return 0;
+    }
+    public static int f6(){
+        JuegoLogico.numero = 6;
+        JuegoLogico.numeroClikeado1(JuegoLogico.numero); 
+    return 0;
+    }
+    public static int f7(){
+        JuegoLogico.numero = 7;
+        JuegoLogico.numeroClikeado1(JuegoLogico.numero); 
+    return 0;
+    }
+    public static int f8(){
+        JuegoLogico.numero = 8;
+        JuegoLogico.numeroClikeado1(JuegoLogico.numero); 
+    return 0;
+    }
+    
+    public static int pc(){
+        JuegoLogico.juegaPC();
+        return 0;
+    }
 }

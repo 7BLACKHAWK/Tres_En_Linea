@@ -5,9 +5,11 @@
  */
 package Vista;
 
+import Modelo.cliente;
 import java.awt.Color;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.ImageIcon;
@@ -28,6 +30,7 @@ public class Menu_Principal extends javax.swing.JFrame {
      * @throws java.lang.IllegalAccessException
      * @throws javax.swing.UnsupportedLookAndFeelException
      */
+    boolean individual = false;
     public Menu_Principal() throws ClassNotFoundException, InstantiationException, IllegalAccessException, UnsupportedLookAndFeelException {
         initComponents();
         UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
@@ -227,14 +230,25 @@ public class Menu_Principal extends javax.swing.JFrame {
                 + " \n Los usuarios no pueden ser el mismo", "Mensaje" ,JOptionPane.OK_CANCEL_OPTION,JOptionPane.PLAIN_MESSAGE,new ImageIcon(image));
         }else{
         if(jr_UnJugador.isSelected()==true){
-            Juego JN = new Juego();
+            individual = true;
+            Juego JN = new Juego(individual);
             JN.setVisible(true);
             dispose();
             Juego.jt_J1.setText(jt_Jugador1.getText());
             Juego.jt_J2.setText(jt_Jugador2.getText());
         }
         if(jr_DosJugadores.isSelected()==true){
-            Juego JN = new Juego();
+            individual = false;
+                Scanner scanner = new Scanner(System.in);
+                String ip;
+                int port;
+                System.out.println("Please input the IP: ");
+		//ip = scanner.nextLine();
+                ip = "localhost";
+		System.out.println("Please input the port: ");
+		port = 3552;
+                cliente client = new cliente(ip,port);
+            Juego JN = new Juego(client,individual);
             JN.setVisible(true);
             dispose();
             Juego.jt_J1.setText(jt_Jugador1.getText());
