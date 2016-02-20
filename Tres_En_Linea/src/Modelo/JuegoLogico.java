@@ -265,6 +265,7 @@ public class JuegoLogico {
 
     public static void inicializarAtributos(cliente client) {
         cliente = client;
+        contador = -1;
         while(cliente.turnox == 0){}
         turnox = cliente.turnox;
         if(turnox == 1 )turno = true;

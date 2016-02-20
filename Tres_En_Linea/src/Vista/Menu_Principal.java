@@ -1,4 +1,4 @@
-/*
+    /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -244,7 +244,7 @@ public class Menu_Principal extends javax.swing.JFrame {
                 int port;
                 System.out.println("Please input the IP: ");
 		//ip = scanner.nextLine();
-                ip = "192.168.0.100";
+                ip = "192.168.1.3";
 		System.out.println("Please input the port: ");
 		port = 3552;
                 cliente client = new cliente(ip,port);
